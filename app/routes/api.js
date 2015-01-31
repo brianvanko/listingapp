@@ -18,6 +18,15 @@ module.exports = function(app, express) {
 		res.json({msg: 'you hit the api home'});
 	});
 
+	apiRouter.route('/category/:name') 
+	.get(function (req, res) {
+		Item.find({categories: req.params.name}, function (err, items) {
+			if (err) res.send(err);
+
+		 	res.json(items);
+		});
+	});
+
 	apiRouter.route('/items')
 		.get(function (req, res) {
 			Item.find(function (err, items) {

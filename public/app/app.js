@@ -1,1 +1,1 @@
-app.js
+angular.module('app', ['ngAnimate', 'appRoutes', 'itemCtrl', 'itemService']);

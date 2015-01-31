@@ -1,0 +1,39 @@
+<div class="page-header">
+	<h1 ng-if="item.type == 'create'">Create item</h1>
+	<h1 ng-if="item.type == 'edit'">Edit item</h1>
+</div>
+
+<form class="form-horizontal" ng-submit="item.saveitem()">
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="item.itemData.name">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Categories</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="item.itemData.categories">
+		</div>
+	</div>
+	
+	<div class="form-group">
+	<div class="col-sm-offset-2 col-sm-6">
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="item.type == 'create'" ng-click="item.saveItem()">Create item</button>
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="item.type == 'edit'" ng-click="item.saveItem()">Update item</button>
+	</div>
+	</div>
+
+</form>
+
+<div class="row show-hide-message" ng-show="item.message">
+	<div class="col-sm-6 col-sm-offset-2">
+		
+		<div class="alert alert-info">
+			{{ item.message }}
+		</div>
+
+	</div>
+</div>

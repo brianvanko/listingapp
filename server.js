@@ -23,13 +23,12 @@ app.use(morgan('dev'));
 // CONNECT TO THE DATABASE
 mongoose.connect(config.database);
 
+// SET STATIC DIRECTORY
+app.use(express.static(__dirname + '/public'));
+
 // API ROUTES 
 var apiRoutes = require('./app/routes/api')(app, express);
 app.use('/api', apiRoutes);
-
-// CATEGORY ROUTES
-var categoryRoutes = require('./app/routes/category')(app, express);
-app.use('/c', categoryRoutes);
 
 // CATCH ALL AND DEFAULT INDEX
 app.get('*', function(req, res) {
