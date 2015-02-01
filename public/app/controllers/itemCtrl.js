@@ -1,9 +1,10 @@
 angular.module("itemCtrl", ['itemService'])
 
-.controller("itemController", function(Item) {
+.controller("itemController", function(Item, $routeParams) {
 	console.log('-----------ITEM HELLO')
 
 	var vm = this;
+	vm.categoryFilter = $routeParams.category;
 	
 	Item.all()
 		.success(function(data) {
@@ -26,15 +27,18 @@ angular.module("itemCtrl", ['itemService'])
 })
 
 .controller("itemCategory", function($routeParams, Item) {
-	console.log('-----------ITEM CATEGORY')
+	console.log('-----------ITEM CATEGORY: ' + $routeParams.category)
 
 	var vm = this;
+
+	vm.categoryFilter = $routeParams.category;
+	//vm.items | filter:$routeParams.category = data;
 	
-	Item.filterByCategory($routeParams.category)
-		.success(function(data) {
-			console.log('success');
-			vm.items = data;
-		});
+	// Item.filterByCategory($routeParams.category)
+	// 	.success(function(data) {
+	// 		console.log('success');
+	// 		vm.items = data;
+	// 	});
 })
 
 .controller('itemEditController', function($routeParams, Item) {
