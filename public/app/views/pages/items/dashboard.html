@@ -35,8 +35,8 @@
 			<td>{{ item.categories }}</td>
 			<td>{{ item.subcategory }}</td>
 			<td class="col-sm-2">
-				<a ng-href="/items/{{ item._id }}" class="btn btn-danger">Edit</a>
-				<a href="#" ng-click="item.deleteItem(item._id)" class="btn btn-primary">Delete</a>
+				<a ng-href="/items/edit/{{ item._id }}" class="btn btn-danger">Edit</a>
+				<a href="#" ng-click="vm.deleteItem(item._id)" class="btn btn-primary">Delete</a>
 			</td>
 		</tr>
 	</tbody>

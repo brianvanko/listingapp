@@ -1,18 +1,18 @@
 <div class='container'>
 	<div class='article featured-content'>
 		<div class="image-wrapper">
-			<a href='{{vm.items[0].link}}' target='_blank'>
+			<a ng-href='{{vm.items[0].link}}' target='_blank'>
 				<img src='app/assets/images/lg/{{vm.items[0].lg_img}}'></img>
 			</a>
 		</div>
 		<div class='content-wrapper'>
 			<div class='category-group'>
 				<h2 class='category'>
-					<a href='/{{vm.items[0].categories}}'>{{vm.items[0].categories}}</a>
+					<a ng-href='/category/{{vm.items[0].categories}}'>{{vm.items[0].categories}}</a>
 				</h2>
 				<span class='sep'>/</span>
 				<h3 class='subcategory' ng-if='vm.items[0].subcategory'>
-					<a href="/{{vm.items[0].subcategory}}">{{vm.items[0].subcategory}}</a>
+					<a ng-href="/category/{{vm.items[0].subcategory}}">{{vm.items[0].subcategory}}</a>
 				</h3>
 			</div>
 			<div class='copy-wrapper'>
@@ -21,7 +21,7 @@
 			</div>
 			<div class='ui-wrapper'>
 				<div class='buy'>
-					<a href="{{vm.items[0].link}}" target='_blank'>
+					<a ng-href="{{vm.items[0].link}}" target='_blank'>
 						<span class='action'>Buy Now</span>
 						<span class='sep'>/</span>
 						<span class='cost'>{{vm.items[0].price}}</span>
@@ -35,18 +35,18 @@
 	<div ng-repeat="item in vm.items" class='col-md-6'>
 		<div class='article one-half'>
 			<div class="image-wrapper">
-				<a href='{{item.link}}' target='_blank'>
+				<a ng-href='{{item.link}}' target='_blank'>
 					<img src='app/assets/images/thumb/{{item.thumb}}'></img>
 				</a>
 			</div>
 			<div class='content-wrapper'>
 				<div class='category-group'>
 					<h2 class='category'>
-						<a href='/{{item.categories}}'>{{item.categories}}</a>
+						<a ng-href='/category/{{item.categories}}'>{{item.categories}}</a>
 					</h2>
 					<span class='sep'>/</span>
 					<h3 class='subcategory' ng-if='item.subcategory'>
-						<a href="/{{item.subcategory}}">{{item.subcategory}}</a>
+						<a ng-href="/category/{{item.subcategory}}">{{item.subcategory}}</a>
 					</h3>
 				</div>
 				<div class='copy-wrapper'>
@@ -55,7 +55,7 @@
 				</div>
 				<div class='ui-wrapper'>
 					<div class='buy'>
-						<a href="{{item.link}}" target='_blank'>
+						<a ng-href="{{item.link}}" target='_blank'>
 							<span class='action'>Buy Now</span>
 							<span class='sep'>/</span>
 							<span class='cost'>{{item.price}}</span>

@@ -19,7 +19,7 @@ angular.module('appRoutes', ['ngRoute'])
 		})
 
 		//edit an individual item
-		.when('/items/:item_id', {
+		.when('/items/edit/:item_id', {
 			templateUrl: 'app/views/pages/items/edit.html',
 			controller: 'itemEditController',
 			controllerAs: 'item'
