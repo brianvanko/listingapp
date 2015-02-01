@@ -12,6 +12,10 @@ angular.module('itemService', [])
 		return $http.get('/api/items/');
 	};
 
+	itemFactory.filterByCategory = function(category) {
+		return $http.get('/api/category/' + category);
+	};
+
 	itemFactory.create = function(itemData) {
 		return $http.post('/api/items/', itemData);
 	};

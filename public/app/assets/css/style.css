@@ -1,0 +1,135 @@
+*:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+h1 {
+  margin: -2px 0 0 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000;
+  text-transform: uppercase;
+  line-height: 25px;
+  padding-bottom:10px;
+}
+
+p {
+margin: 0 0 20px 0;
+padding: 0;
+font-size: 16px;
+line-height: 22px;
+}
+
+.article-title {
+text-align: center;
+margin-bottom: -5px;
+}
+
+.buy {
+  background: black;
+  width:46%;
+  border: 1px solid #c7c7c7;
+  display: inline-block;
+}
+
+.buy a {
+   color: #ffffff;
+   text-decoration: none;
+}
+
+.category-group a {
+  color: #ffffff;
+  height: 30px;
+}
+
+.one-half {
+  width: 48.9583333%;
+  float: left;
+  height: auto;
+  overflow: hidden;
+  margin-right: 2.0833334%;
+}
+
+h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
+  color: #000;
+  text-decoration: none;
+}
+
+.article {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  height: auto;
+  border: 1px solid #c7c7c7;
+}
+
+.grid {
+  height: auto;
+  overflow: hidden;
+  width: 94.047619%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.image-wrapper {
+  overflow: hidden;
+  height: auto;
+  position: relative;
+  z-index: 100;
+}
+
+.image-wrapper img {
+  max-width: 100%;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.subcategory a, .category a {
+  text-decoration: none;
+}
+
+.category-group {
+  display: inline-block;
+  overflow: hidden;
+  height: auto;
+  background: #a08f68;
+  color: #ffffff;
+  text-transform: uppercase;
+  width: auto;
+  margin: 20px 0;
+  padding: 13px 16px;
+  text-align: center;
+
+  
+  font-size: 12px;
+  height: 36px;
+}
+
+.category-group h2, .category-group h3 {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  
+}
+
+.copy-wrapper {
+  padding: 0 20px;
+  display: block;
+  overflow: hidden;
+  height: auto;
+  max-height: 183px;
+  margin-bottom: 12px;
+  position: relative;
+  text-align: left;
+}

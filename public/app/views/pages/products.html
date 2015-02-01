@@ -1,0 +1,35 @@
+<div class="text-center">
+	<div ng-repeat="item in vm.items">
+		<div class='article one-half'>
+			<div class="image-wrapper">
+				<a href='{{item.link}}'>
+					<img src='app/assets/images/thumb/{{item.thumb}}'></img>
+				</a>
+			</div>
+			<div class='content-wrapper'>
+				<div class='category-group'>
+					<h2 class='category'>
+						<a href='/{{item.categories}}'>{{item.categories}}</a>
+					</h2>
+					<span class='sep'>/</span>
+					<h3 class='subcategory' ng-if='item.subcategory'>
+						<a href="/{{item.subcategory}}">{{item.subcategory}}</a>
+					</h3>
+				</div>
+				<div class='copy-wrapper'>
+					<h1 class='article-title text-center'>{{ item.name }}</h1>
+					<p>{{ item.description }}</p>
+				</div>
+				<div class='ui-wrapper'>
+					<div class='buy'>
+						<a href="{{item.link}}">
+							<span class='action'>Buy Now</span>
+							<span class='sep'>/</span>
+							<span class='cost'>{{item.price}}</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -13,7 +13,13 @@
 		<tr>
 			<th>_id</th>
 			<th>Name</th>
+			<th>Description</th>
+			<th>Link</th>
+			<th>Thumb</th>
+			<th>LG Image</th>
+			<th>Price</th>
 			<th>Category</th>
+			<th>Subcategory</th>
 			<th class="col-sm-2"></th>
 		</tr>
 	</thead>
@@ -21,7 +27,13 @@
 		<tr ng-repeat="item in vm.items">
 			<td>{{ item._id }}</td>
 			<td>{{ item.name }}</td>
+			<td>{{ item.description }}</td>
+			<td>{{ item.link }}</td>
+			<td>{{ item.thumb }}</td>
+			<td>{{ item.lg_img }}</td>
+			<td>{{ item.price }}</td>
 			<td>{{ item.categories }}</td>
+			<td>{{ item.subcategory }}</td>
 			<td class="col-sm-2">
 				<a ng-href="/items/{{ item._id }}" class="btn btn-danger">Edit</a>
 				<a href="#" ng-click="item.deleteItem(item._id)" class="btn btn-primary">Delete</a>
@@ -29,3 +41,5 @@
 		</tr>
 	</tbody>
 </table>
+
+

@@ -39,12 +39,12 @@ module.exports = function(app, express) {
 			var item = new Item();
 
 			item.name = req.body.name;
-			item.title = req.body.title;
 			item.description = req.body.description;
 			item.link = req.body.link;
 			item.thumb = req.body.thumb;
-			item.image = req.body.image;
+			item.lg_img = req.body.lg_img;
 			item.categories = req.body.categories;
+			item.subcategory = req.body.subcategory;
 			item.price = req.body.price;
 
 			item.save(function (err) {
@@ -67,12 +67,12 @@ module.exports = function(app, express) {
 				if (err) res.send(err);
 
 				if (req.body.name) item.name = req.body.name;
-				if (req.body.title) item.title = req.body.title;
 				if (req.body.description) item.description = req.body.description;
 				if (req.body.link) item.link = req.body.link;
 				if (req.body.thumb) item.thumb = req.body.thumb;
-				if (req.body.image) item.image = req.body.image;
+				if (req.body.lg_img) item.lg_img = req.body.lg_img;
 				if (req.body.categories) item.categories = req.body.categories;
+				if (req.body.subcategory) item.subcategory = req.body.subcategory;
 				if (req.body.price) item.price = req.body.price;
 
 				item.save(function (err) {

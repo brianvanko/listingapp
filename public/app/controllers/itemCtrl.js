@@ -1,6 +1,7 @@
 angular.module("itemCtrl", ['itemService'])
 
 .controller("itemController", function(Item) {
+	console.log('-----------ITEM HELLO')
 
 	var vm = this;
 	
@@ -20,8 +21,20 @@ angular.module("itemCtrl", ['itemService'])
 						vm.items = data;
 					});
 
-			});
+		});
 	};
+})
+
+.controller("itemCategory", function($routeParams, Item) {
+	console.log('-----------ITEM CATEGORY')
+
+	var vm = this;
+	
+	Item.filterByCategory($routeParams.category)
+		.success(function(data) {
+			console.log('success');
+			vm.items = data;
+		});
 })
 
 .controller('itemEditController', function($routeParams, Item) {
@@ -41,7 +54,7 @@ angular.module("itemCtrl", ['itemService'])
 			.success(function(data) {
 				vm.itemData = {};
 				vm.message = data.msg;
-		});
+			});
 	};
 
 })
@@ -56,7 +69,7 @@ angular.module("itemCtrl", ['itemService'])
 			.success(function(data) {
 				vm.itemData = {};
 				vm.message = data.msg;
-		})
+			})
 	}
 })
 
