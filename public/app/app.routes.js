@@ -28,7 +28,7 @@ angular.module('appRoutes', ['ngRoute'])
 		//categories route
 		.when('/category/:category', {
 			templateUrl: 'app/views/pages/products.html',
-			controller: 'itemCategory',
+			controller: 'itemController',
 			controllerAs: 'item'
 		})
 

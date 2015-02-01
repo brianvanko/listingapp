@@ -1,16 +1,26 @@
 angular.module("itemCtrl", ['itemService'])
 
-.controller("itemController", function(Item) {
-	console.log('-----------ITEM MAIN')
+.controller("itemController", function(Item, $routeParams) {
+	console.log('-----------ITEM MAIN', $routeParams.category)
 
 	var vm = this;
-	
-	Item.all()
-		.success(function(data) {
-			console.log('success')
-			vm.items = data;
-		});
 
+	if ($routeParams.category != undefined) {
+		console.log('filtered results')
+		Item.filterByCategory($routeParams.category)
+			.success(function(data) {
+				console.log('success', data);
+				vm.items = data;
+			})
+	} else {
+		console.log('all results')
+		Item.all()
+			.success(function(data) {
+				console.log('success')
+				vm.items = data;
+			});
+	}
+	
 	vm.deleteItem = function(id) {
 		console.log('deleting')
 
@@ -23,23 +33,6 @@ angular.module("itemCtrl", ['itemService'])
 
 		});
 	};
-})
-
-.controller("itemCategory", function($routeParams, Item) {
-	
-
-	var vm = this;
-
-	//vm.categoryFilter = $routeParams.category;
-	//vm.items | filter:$routeParams.category = data;
-	
-	Item.filterByCategory($routeParams.category)
-		.success(function(data) {
-			console.log('success');
-			vm.items = data;
-			console.log('-----------ITEM CATEGORY: ' + $routeParams.category + " " + vm.items)
-		});
-	
 })
 
 .controller('itemEditController', function($routeParams, Item) {

@@ -20,9 +20,10 @@ module.exports = function(app, express) {
 
 	apiRouter.route('/category/:name') 
 	.get(function (req, res) {
+		console.log('name', req.params.name)
 		Item.find({categories: req.params.name}, function (err, items) {
 			if (err) res.send(err);
-
+			console.log('items', items)
 		 	res.json(items);
 		});
 	});
