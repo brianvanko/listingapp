@@ -10,10 +10,10 @@ var superSecret = config.secret;
 module.exports = function(app, express) {
 	var apiRouter = express.Router();
 
-	apiRouter.use(function (req, res, next) {
-		console.log(req.method, req.url);
-		next();
-	});
+	// apiRouter.use(function (req, res, next) {
+	// 	console.log(req.method, req.url);
+	// 	next();
+	// });
 
 	apiRouter.get('/', function (req, res) {
 		res.json({msg: 'you hit the api home'});
@@ -128,25 +128,26 @@ module.exports = function(app, express) {
 	  });
 	});
 
-	// apiRouter.use(function(req, res, next) {
-	// 	console.log('Somebody just came to our app!');
+	apiRouter.use(function(req, res, next) {
+		console.log('someone came to the app');
 
-	//   	var token = req.body.token || req.param('token') || req.headers['x-access-token'];
+	  	var token = req.body.token || req.param('token') || req.headers['x-access-token'];
 
-	//   	if (token) {
-	//     	jwt.verify(token, superSecret, function(err, decoded) {      
-	//     if (err) {
-	//     	res.status(403).send({ success: false, message: 'Failed to authenticate token.' });  	   
-	//     } else { 
-	//     	req.decoded = decoded; 
-	//         next(); 
-	//     	}
-	//     });
+	  	if (token) {
+	    	jwt.verify(token, superSecret, function(err, decoded) {      
+	    if (err) {
+	    	res.status(403).send({ success: false, message: 'Failed to authenticate token.' });  	   
+	    } else { 
+	    	req.decoded = decoded;
+	            
+	        next(); 
+	    	}
+	    });
 
-	//   	} else {
- //   	 		res.status(403).send({ success: false, message: 'No token provided.' });
-	//   }
-	// });
+	  	} else {
+   	 		res.status(403).send({ success: false, message: 'No token provided.' });
+	  }
+	});
 
 	apiRouter.route('/users')
 

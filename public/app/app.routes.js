@@ -11,6 +11,20 @@ angular.module('appRoutes', ['ngRoute'])
 			controllerAs: 'item'
 		})
 
+		//single item route
+		.when('/items/:item_id', {
+			templateUrl: 'app/views/pages/items/details.html',
+			controller: 'itemViewController',
+			controllerAs: 'item'
+		})
+
+		//dashboard route
+		.when('/admin/items', {
+			templateUrl: 'app/views/pages/items/dashboard.html',
+			controller: 'itemController',
+			controllerAs: 'item'
+		})
+
 		//create an item route
 		.when('/admin/items/create', {
 			templateUrl: 'app/views/pages/items/edit.html',
@@ -32,19 +46,9 @@ angular.module('appRoutes', ['ngRoute'])
 			controllerAs: 'item'
 		})
 
-		//single item route
-		.when('/items/:item_id', {
-			templateUrl: 'app/views/pages/items/details.html',
-			controller: 'itemViewController',
-			controllerAs: 'item'
-		})
+		
 
-		//dashboard route
-		.when('/admin/items', {
-			templateUrl: 'app/views/pages/items/dashboard.html',
-			controller: 'itemController',
-			controllerAs: 'item'
-		})
+		
 
 	$locationProvider.html5Mode(true);
 
