@@ -5,16 +5,18 @@ angular.module("itemCtrl", ['itemService'])
 
 	var vm = this;
 
+
+	vm.filterData = function(searchReq) {
+		
+		vm.searchText = searchReq;
+	}
+
+	
 	Item.all()
 			.success(function(data) {
 				console.log('success')
 				vm.items = data;
 			});
-
-
-	vm.filterMe = function(searchReq) {
-		vm.searchText = searchReq;
-	}
 	
 	vm.deleteItem = function(id) {
 		console.log('deleting')
