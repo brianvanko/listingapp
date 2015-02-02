@@ -32,6 +32,13 @@ angular.module('appRoutes', ['ngRoute'])
 			controllerAs: 'item'
 		})
 
+		//single item route
+		.when('/items/:item_id', {
+			templateUrl: 'app/views/pages/details.html',
+			controller: 'itemViewController',
+			controllerAs: 'item'
+		})
+
 		//dashboard route
 		.when('/items', {
 			templateUrl: 'app/views/pages/items/dashboard.html',

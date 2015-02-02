@@ -1,0 +1,33 @@
+<div class='container'>
+	<div class='article one-half'>
+		<div class="image-wrapper">
+			<a ng-href='{{item.itemData.link}}' target='_blank'>
+				<img src='app/assets/images/thumb/{{item.itemData.thumb}}'></img>
+			</a>
+		</div>
+		<div class='content-wrapper'>
+			<div class='category-group'>
+				<h2 class='category'>
+					<a ng-href='/category/{{item.itemData.categories}}'>{{item.itemData.categories}}</a>
+				</h2>
+				<span class='sep'>/</span>
+				<h3 class='subcategory' ng-if='item.itemData.subcategory'>
+					<a ng-href="/category/{{item.itemData.subcategory}}">{{item.itemData.subcategory}}</a>
+				</h3>
+			</div>
+			<div class='copy-wrapper'>
+				<h1 class='article-title text-center'>{{ item.itemData.name }}</h1>
+				<p>{{ item.itemData.description }}</p>
+			</div>
+			<div class='ui-wrapper'>
+				<div class='buy'>
+					<a ng-href="{{item.itemData.link}}" target='_blank'>
+						<span class='action'>Buy Now</span>
+						<span class='sep'>/</span>
+						<span class='cost'>{{item.itemData.price}}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

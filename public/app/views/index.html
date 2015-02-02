@@ -34,7 +34,7 @@
 	<div class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="/" class="navbar-brand">BUY NOW CLUB</a>
+				<a href='/' ng-click='vm.filterData("")' class="navbar-brand pointer">BUY NOW CLUB</a>
 			</div>
 			<ul class="nav navbar-nav pull-right">
 
@@ -42,7 +42,8 @@
 				<li><a ng-click='vm.filterData("Vices")' class='pointer'>Vices</a></li>
 
 				<li><a href="/items">Product Dashboard</a></li>
-				<li><a href='/search'><span class="glyphicon glyphicon-search pull-right" aria-hidden="true"></span></a></li>
+  
+				<li><a href='/search'><span class="glyphicon glyphicon-search pull-right" aria-hidden="false"></span></a></li>
 			</ul>
 		</div>
 	</div>

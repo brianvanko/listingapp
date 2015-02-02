@@ -5,18 +5,10 @@ angular.module("itemCtrl", ['itemService'])
 
 	var vm = this;
 
-
 	vm.filterData = function(searchReq) {
-		
+		console.log('searchReq: ' + searchReq);
 		vm.searchText = searchReq;
 	}
-
-	
-	Item.all()
-			.success(function(data) {
-				console.log('success')
-				vm.items = data;
-			});
 	
 	vm.deleteItem = function(id) {
 		console.log('deleting')
@@ -30,6 +22,22 @@ angular.module("itemCtrl", ['itemService'])
 
 		});
 	};
+
+	if (vm.items) { return };
+	Item.all()
+			.success(function(data) {
+				console.log('success')
+				vm.items = data;
+			});
+})
+
+.controller('itemViewController', function($routeParams, Item) {
+	var vm = this;
+
+	Item.get($routeParams.item_id)
+		.success(function(data) {
+			vm.itemData = data;
+		});
 })
 
 .controller('itemEditController', function($routeParams, Item) {
