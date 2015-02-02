@@ -5,20 +5,15 @@ angular.module("itemCtrl", ['itemService'])
 
 	var vm = this;
 
-	if ($routeParams.category != undefined) {
-		console.log('filtered results')
-		Item.filterByCategory($routeParams.category)
-			.success(function(data) {
-				console.log('success', data);
-				vm.items = data;
-			})
-	} else {
-		console.log('all results')
-		Item.all()
+	Item.all()
 			.success(function(data) {
 				console.log('success')
 				vm.items = data;
 			});
+
+
+	vm.filterMe = function(searchReq) {
+		vm.searchText = searchReq;
 	}
 	
 	vm.deleteItem = function(id) {
