@@ -6,7 +6,7 @@ angular.module('appRoutes', ['ngRoute'])
 
 		//default product page index
 		.when('/', {
-			templateUrl: 'app/views/pages/products.html',
+			templateUrl: 'app/views/pages/items/products.html',
 			controller: 'itemController',
 			controllerAs: 'item'
 		})
@@ -27,14 +27,14 @@ angular.module('appRoutes', ['ngRoute'])
 
 		//categories route
 		.when('/category/:category', {
-			templateUrl: 'app/views/pages/products.html',
-			controller: 'itemController',
+			templateUrl: 'app/views/pages/items/products.html',
+			controller: 'itemCategoryController',
 			controllerAs: 'item'
 		})
 
 		//single item route
 		.when('/items/:item_id', {
-			templateUrl: 'app/views/pages/details.html',
+			templateUrl: 'app/views/pages/items/details.html',
 			controller: 'itemViewController',
 			controllerAs: 'item'
 		})

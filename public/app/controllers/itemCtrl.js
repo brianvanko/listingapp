@@ -31,6 +31,18 @@ angular.module("itemCtrl", ['itemService'])
 			});
 })
 
+.controller("itemCategoryController", function(Item, $routeParams) {
+	console.log('-----------ITEM CATEGORY', $routeParams.category)
+
+	var vm = this;
+
+	Item.filterByCategory($routeParams.categories)
+			.success(function(data) {
+				console.log('success')
+				vm.items = data;
+			});
+})
+
 .controller('itemViewController', function($routeParams, Item) {
 	var vm = this;
 
