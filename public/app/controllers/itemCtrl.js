@@ -36,7 +36,7 @@ angular.module("itemCtrl", ['itemService'])
 
 	var vm = this;
 
-	Item.filterByCategory($routeParams.categories)
+	Item.filterByCategory($routeParams.category)
 			.success(function(data) {
 				console.log('success')
 				vm.items = data;

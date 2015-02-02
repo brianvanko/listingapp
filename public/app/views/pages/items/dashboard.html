@@ -1,7 +1,7 @@
 <div class="page-header">
 	<h1>
 		Product List
-		<a href="/items/create" class="btn btn-default">
+		<a href="/admin/items/create" class="btn btn-default">
 			<span class="glyphicon glyphicon-plus"></span> 
 			New Item
 		</a>
@@ -35,7 +35,7 @@
 			<td>{{ item.categories }}</td>
 			<td>{{ item.subcategory }}</td>
 			<td class="col-sm-2">
-				<a ng-href="/items/edit/{{ item._id }}" class="btn btn-danger">Edit</a>
+				<a ng-href="/admin/items/edit/{{ item._id }}" class="btn btn-danger">Edit</a>
 				<a href="#" ng-click="vm.deleteItem(item._id)" class="btn btn-primary">Delete</a>
 			</td>
 		</tr>

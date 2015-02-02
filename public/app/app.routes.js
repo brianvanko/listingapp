@@ -12,14 +12,14 @@ angular.module('appRoutes', ['ngRoute'])
 		})
 
 		//create an item route
-		.when('/items/create', {
+		.when('/admin/items/create', {
 			templateUrl: 'app/views/pages/items/edit.html',
 			controller: 'itemCreateController',
 			controllerAs: 'item'
 		})
 
 		//edit an individual item
-		.when('/items/edit/:item_id', {
+		.when('/admin/items/edit/:item_id', {
 			templateUrl: 'app/views/pages/items/edit.html',
 			controller: 'itemEditController',
 			controllerAs: 'item'
@@ -40,7 +40,7 @@ angular.module('appRoutes', ['ngRoute'])
 		})
 
 		//dashboard route
-		.when('/items', {
+		.when('/admin/items', {
 			templateUrl: 'app/views/pages/items/dashboard.html',
 			controller: 'itemController',
 			controllerAs: 'item'
