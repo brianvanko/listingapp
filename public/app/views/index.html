@@ -41,17 +41,19 @@
 			</div>
 			<ul class="nav navbar-nav pull-right">
 
-				<li><a ng-click='vm.filterData("Tech")' class='pointer'>Tech</a></li>
-				<li><a ng-click='vm.filterData("Vices")' class='pointer'>Vices</a></li>
+				<li><a href='/' ng-click='vm.filterData("Tech")' class='pointer'>Tech</a></li>
+				<li><a href='/' ng-click='vm.filterData("Vices")' class='pointer'>Vices</a></li>
 
 				<li><a href="/admin/items">Products Dashboard</a></li>
 				<li><a href="/admin/users">Users Dashboard</a></li>
 				<li ng-if="!vm.loggedIn"><a href="/login">Login</a></li>
 				<li ng-if="vm.loggedIn" class="navbar-text">Hello {{ vm.user.username }}!</li>
 				<li ng-if="vm.loggedIn"><a href="#" ng-click="vm.doLogout()">Logout</a></li>
-  
-				<li><a href='/search'><span class="glyphicon glyphicon-search pull-right" aria-hidden="false"></span></a></li>
+				<li><a href='#' id='searchBox'><input type='text' ng-model='vm.searchText'></a></li>
+
+				<!-- <li><a href='/search'><span class="glyphicon glyphicon-search pull-right" aria-hidden="false"></span></a></li> -->
 			</ul>
+			
 		</div>
 	</div>
 </header>

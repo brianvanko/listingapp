@@ -59,12 +59,14 @@ angular.module("itemCtrl", ['itemService'])
 		});
 	};
 
-	if (vm.items) { return };
+	if ( vm.items ) { return };
 	Item.all()
 			.success(function(data) {
-				console.log('success')
+				console.log('success all')
 				vm.items = data;
 			});
+
+	
 })
 
 .controller("itemCategoryController", function(Item, $routeParams) {
@@ -74,7 +76,7 @@ angular.module("itemCtrl", ['itemService'])
 
 	Item.filterByCategory($routeParams.category)
 			.success(function(data) {
-				console.log('success')
+				console.log('success category controller')
 				vm.items = data;
 			});
 })

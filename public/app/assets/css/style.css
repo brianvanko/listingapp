@@ -9,6 +9,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   text-decoration: none;
 }
 
+#searchBox {
+  color: #444444;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -25,10 +29,10 @@ h1 {
 }
 
 p {
-margin: 0 0 20px 0;
-padding: 0;
-font-size: 16px;
-line-height: 22px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .article-title {
