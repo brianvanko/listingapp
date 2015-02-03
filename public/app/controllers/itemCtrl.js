@@ -1,9 +1,45 @@
 angular.module("itemCtrl", ['itemService'])
 
-.controller("itemController", function(Item, $routeParams) {
+.controller("itemController", function(Item, $routeParams, $rootScope, $location, Auth) {
 	console.log('-----------ITEM MAIN', $routeParams.category)
 
 	var vm = this;
+
+	/////////////// LOGIN LOGIC, MUST BE REFACTORED ///////////////
+	vm.loggedIn = Auth.isLoggedIn();
+
+	$rootScope.$on('$routeChangeStart', function() {
+		vm.loggedIn = Auth.isLoggedIn();	
+
+		Auth.getUser()
+			.then(function(data) {
+				vm.user = data.data;
+			});	
+	});	
+
+	vm.doLogin = function() {
+		vm.processing = true;
+
+		vm.error = '';
+
+		Auth.login(vm.loginData.username, vm.loginData.password)
+			.success(function(data) {
+				vm.processing = false;			
+
+				if (data.success)			
+					$location.path('/');
+				else 
+					vm.error = data.message;
+				
+			});
+	};
+
+	vm.doLogout = function() {
+		Auth.logout();
+		$location.path('/');
+	};
+
+	/////////////// END LOGIN LOGIC ///////////////
 
 	vm.filterData = function(searchReq) {
 		console.log('searchReq: ' + searchReq);

@@ -46,9 +46,36 @@ angular.module('appRoutes', ['ngRoute'])
 			controllerAs: 'item'
 		})
 
-		
+		// USER ROUTES //
 
-		
+		// login page
+		.when('/login', {
+			templateUrl : 'app/views/pages/login.html',
+   			controller  : 'mainController',
+    		controllerAs: 'login'
+		})
+
+		// sign up form
+		// same view as edit page
+		.when('/users/create', {
+			templateUrl: 'app/views/pages/users/profile.html',
+			controller: 'userCreateController',
+			controllerAs: 'user'
+		})
+
+		// page to edit user info
+		.when('/users/:user_id', {
+			templateUrl: 'app/views/pages/users/profile.html',
+			controller: 'userEditController',
+			controllerAs: 'user'
+		})
+
+		// show all users
+		.when('/admin/users', {
+			templateUrl: 'app/views/pages/users/users.html',
+			controller: 'userController',
+			controllerAs: 'user'
+		});
 
 	$locationProvider.html5Mode(true);
 

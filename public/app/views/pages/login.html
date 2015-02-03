@@ -1,13 +1,9 @@
 <div class="row col-md-6 col-md-offset-3">
-	
-	<div class="alert alert-info">
-		<p>Test Info</p>
-		<p><strong>Username</strong>: chris</p>
-		<p><strong>Password</strong>: supersecret</p>
-	</div>
-
 	<div class="jumbotron">
-		<h1>Login</h1>		
+		<p class='text-center'><b>An account is required.</b></p>	
+		<p class='text-center'>
+			Yeah, we know.  Who wants to sign up for another site?  But you'll need an account to stash your favorites somewhere...
+		</p>	
 
 		<form ng-submit="login.doLogin()">
 			
@@ -31,6 +27,17 @@
 			</button>
 
 		</form>
+
+	</div>
+	
+	<div class='text-center'>
+		<p>Need your own account?<br/>
+			<a href='/users/create'>Sign up</a>.  It's painless.
+		</p>
+		<hr>
+		<p>
+			Or did you <a href='#'>forget your password</a>?
+		</p>
 	</div>
 	
 </div>

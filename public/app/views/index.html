@@ -18,14 +18,17 @@
 
 	<!-- CONTROLLERS -->
 	<script src="app/controllers/itemCtrl.js"></script>
+	<script src="app/controllers/mainCtrl.js"></script>
+	<script src="app/controllers/userCtrl.js"></script>
 
 	<!-- SERVICES -->
 	<script src="app/services/itemService.js"></script>
-
+	<script src="app/services/authService.js"></script>
+	<script src="app/services/userService.js"></script>
+	
 	<!-- MAIN -->
 	<script src="app/app.js"></script>
 	<script src="app/app.routes.js"></script>
-
 </head>
 <body ng-app="app" ng-controller="itemController as vm">
 
@@ -41,7 +44,11 @@
 				<li><a ng-click='vm.filterData("Tech")' class='pointer'>Tech</a></li>
 				<li><a ng-click='vm.filterData("Vices")' class='pointer'>Vices</a></li>
 
-				<li><a href="/admin/items">Product Dashboard</a></li>
+				<li><a href="/admin/items">Products Dashboard</a></li>
+				<li><a href="/admin/users">Users Dashboard</a></li>
+				<li ng-if="!vm.loggedIn"><a href="/login">Login</a></li>
+				<li ng-if="vm.loggedIn" class="navbar-text">Hello {{ vm.user.username }}!</li>
+				<li ng-if="vm.loggedIn"><a href="#" ng-click="vm.doLogout()">Logout</a></li>
   
 				<li><a href='/search'><span class="glyphicon glyphicon-search pull-right" aria-hidden="false"></span></a></li>
 			</ul>
