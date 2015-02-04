@@ -40,13 +40,6 @@ p {
   margin-bottom: -5px;
 }
 
-.buy {
-  background: black;
-  width:46%;
-  border: 1px solid #c7c7c7;
-  display: inline-block;
-}
-
 .buy a {
    color: #ffffff;
    text-decoration: none;
@@ -145,3 +138,71 @@ h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
   position: relative;
   text-align: left;
 }
+
+
+
+.ui-wrapper {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  overflow: hidden;
+  height: auto; }
+  .ui-wrapper .sep {
+    font-size: 12px;
+    font-weight: normal; }
+  .ui-wrapper a {
+    text-decoration: none;
+    color: #ffffff; }
+  @media (max-width: 767px) {
+    .ui-wrapper .buy {
+      width: 100%;
+      overflow: hidden;
+      padding: 0 20px 0 20px; } }
+  .ui-wrapper .buy a {
+    display: block;
+    width: 300px;
+    height: 36px;
+    background: #000000;
+    margin: 0 auto 20px;
+    text-align: center;
+    padding: 12px 7px;
+    font-size: 12px;
+    font-weight: bold; }
+    @media (max-width: 767px) {
+      .ui-wrapper .buy a {
+        width: 100%; } }
+  .ui-wrapper .buy.no {
+    display: block;
+    height: 30px;
+    width: auto;
+    margin-bottom: 20px; }
+  .ui-wrapper .buy.no a {
+    background: #ffffff;
+    display: none; }
+  .ui-wrapper .social {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    text-align: center;
+    overflow: hidden;
+    height: auto; }
+    @media (max-width: 767px) {
+      .ui-wrapper .social {
+        width: 100%;
+        padding: 0 20px 0 20px; } }
+    .ui-wrapper .social a {
+      display: block;
+      width: 33.333333333%;
+      float: left;
+      padding: 12px 7px;
+      height: 36px; }
+    .ui-wrapper .social .facebook {
+      background: #3c3c3c; }
+    .ui-wrapper .social .twitter {
+      background: #666666; }
+    .ui-wrapper .social .stash {
+      background: #999999; }
+    @media (max-width: 350px) {
+      .ui-wrapper .social .sep, .ui-wrapper .social .like-count, .ui-wrapper .social .tweet-count, .ui-wrapper .social .stash-count {
+        display: none; } }
