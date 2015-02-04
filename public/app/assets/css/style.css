@@ -60,10 +60,8 @@ p {
 
 .featured-content {
   width: 80%;
-  float: left;
   height: auto;
   overflow: hidden;
-  margin-right: 2.0833334%;
 }
 
 h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
