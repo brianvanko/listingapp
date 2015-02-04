@@ -36,7 +36,7 @@ angular.module("itemCtrl", ['itemService'])
 
 	vm.doLogout = function() {
 		Auth.logout();
-		$location.path('/');
+		window.location.reload();
 	};
 
 	/////////////// END LOGIN LOGIC ///////////////
