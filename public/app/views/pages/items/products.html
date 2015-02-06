@@ -11,11 +11,11 @@
 			<div class='content-wrapper'>
 				<div class='category-group'>
 					<h2 class='category'>
-						<a ng-href='/category/{{item.categories}}'>{{item.categories}}</a>
+						<a class='pointer' ng-click='vm.filterData(item.categories)'>{{item.categories}}</a>
 					</h2>
 					<span class='sep'>/</span>
 					<h3 class='subcategory' ng-if='item.subcategory'>
-						<a ng-href="/category/{{item.subcategory}}">{{item.subcategory}}</a>
+						<a class='pointer' ng-click='vm.filterData(item.subcategory)'>{{item.subcategory}}</a>
 					</h3>
 				</div>
 				<div class='copy-wrapper'>
